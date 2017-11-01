@@ -8,7 +8,7 @@ import config from './webpack.config';
 
 const compiler = webpack(config);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 express()
   .use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
@@ -19,3 +19,5 @@ express()
     if (err) { console.log(err); }
     console.log(`Listening on port ${PORT}`);
   });
+
+    
