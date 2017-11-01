@@ -15,7 +15,7 @@ express()
   .get('*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
   .listen(process.env.PORT, 'localhost', (err) => {
     if (err) { console.log(err); }
-    console.log(`Listening on port ${PORT}`);
+    console.log(`Listening on port ${process.env.PORT}`);
   });
 
     
