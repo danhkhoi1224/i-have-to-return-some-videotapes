@@ -13,9 +13,6 @@ express()
   .use(webpackHotMiddleware(compiler))
   .use('/assets', express.static(path.join(__dirname, 'assets')))
   .get('*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
-  .listen(process.env.PORT, 'localhost', (err) => {
-    if (err) { console.log(err); }
-    console.log(`Listening on port ${process.env.PORT}`);
-  });
+  .listen(process.env.PORT);
 
-    
+                          
