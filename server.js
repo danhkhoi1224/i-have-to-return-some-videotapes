@@ -26,9 +26,10 @@ express()
   .use(webpackHotMiddleware(compiler))
   .use('/assets', express.static(path.join(__dirname, 'assets')))
   //.use('/apple-app-site-association', express.static(path.join('apple-app-site-association')))
-  //.get('*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
+  //
   .use('/apple-app-site-association', function(req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(appleData));
   })
+  .get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
   .listen(process.env.PORT || 3000);            
