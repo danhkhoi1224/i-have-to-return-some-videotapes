@@ -30,7 +30,7 @@ const app = (
       <Route path="/" component={App}>
         <IndexRoute component={GameContainer} />
         <Route path={EDITOR_PATH} component={EditorContainer} />
-        <Route path="*" component={GameContainer} />
+        <Route path="/app" component={GameContainer} />
       </Route>
     </ReduxRouter>
   </Provider>
